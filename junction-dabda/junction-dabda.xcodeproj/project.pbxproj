@@ -14,6 +14,7 @@
 		89BFCFCA28B1659E00D3CA6F /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFC928B1659E00D3CA6F /* MyRequestInterceptor.swift */; };
 		89BFCFCC28B16A1F00D3CA6F /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */; };
 		89BFCFCE28B16D2000D3CA6F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFCD28B16D2000D3CA6F /* AuthService.swift */; };
+		89BFCFD028B179B600D3CA6F /* NewQuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFCF28B179B600D3CA6F /* NewQuizModel.swift */; };
 		89C04E1A28B0437300612DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1928B0437300612DF0 /* AppDelegate.swift */; };
 		89C04E1C28B0437300612DF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1B28B0437300612DF0 /* SceneDelegate.swift */; };
 		89C04E1E28B0437300612DF0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1D28B0437300612DF0 /* MainViewController.swift */; };
@@ -37,6 +38,7 @@
 		89BFCFC928B1659E00D3CA6F /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
 		89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		89BFCFCD28B16D2000D3CA6F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		89BFCFCF28B179B600D3CA6F /* NewQuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuizModel.swift; sourceTree = "<group>"; };
 		89C04E1628B0437300612DF0 /* junction-dabda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "junction-dabda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C04E1928B0437300612DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C04E1B28B0437300612DF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				89BFCFC228B161ED00D3CA6F /* APIConstants.swift */,
 				89BFCFC428B1623E00D3CA6F /* QuizModel.swift */,
 				89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */,
+				89BFCFCF28B179B600D3CA6F /* NewQuizModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				89BFCFCE28B16D2000D3CA6F /* AuthService.swift in Sources */,
 				89C04E3E28B0C89900612DF0 /* LoginViewController.swift in Sources */,
 				89C04E1C28B0437300612DF0 /* SceneDelegate.swift in Sources */,
+				89BFCFD028B179B600D3CA6F /* NewQuizModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -156,7 +156,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pbx-pK-jkc">
                                         <rect key="frame" x="0.0" y="50" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -383,6 +383,10 @@
                             <constraint firstItem="FTT-OF-9u0" firstAttribute="trailing" secondItem="niD-Ap-FSA" secondAttribute="trailing" constant="16" id="vHt-aB-EYq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreTextfield" destination="pKL-MS-LPn" id="cEC-5d-h7Y"/>
+                        <outlet property="titleTextfield" destination="Wqz-bj-Vce" id="wtK-y4-fQb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uox-pP-NEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -407,6 +411,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="완료">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="pressedCompleteButton" destination="XhQ-ZW-xDS" eventType="touchUpInside" id="1ou-13-DBc"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="QvO-al-Xbx">
                                 <rect key="frame" x="16" y="710" width="382" height="60"/>
@@ -470,6 +477,9 @@
                                                                     <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="Nhl-h3-oEe" id="Q0r-ks-eAt"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -486,6 +496,9 @@
                                                                     <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="Nhl-h3-oEe" id="RaZ-zw-nBX"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -526,6 +539,9 @@
                                                                     <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits"/>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="Gc8-Rf-qbK" id="diw-C5-DsV"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -546,6 +562,9 @@
                                                                 <segment title="True"/>
                                                                 <segment title="False"/>
                                                             </segments>
+                                                            <connections>
+                                                                <action selector="segmentedControlValueChanged" destination="Gc8-Rf-qbK" eventType="valueChanged" id="eyg-FE-iPm"/>
+                                                            </connections>
                                                         </segmentedControl>
                                                     </subviews>
                                                 </stackView>
@@ -570,6 +589,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="msZ-wy-DP2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="msZ-wy-DP2" firstAttribute="trailing" secondItem="QvO-al-Xbx" secondAttribute="trailing" constant="16" id="51C-8w-xE4"/>
                             <constraint firstItem="QvO-al-Xbx" firstAttribute="top" secondItem="2mN-oD-hGB" secondAttribute="bottom" constant="16" id="5hw-W9-r9U"/>
@@ -582,12 +602,20 @@
                             <constraint firstItem="QvO-al-Xbx" firstAttribute="leading" secondItem="msZ-wy-DP2" secondAttribute="leading" constant="16" id="RO9-Gg-wt3"/>
                             <constraint firstItem="2mN-oD-hGB" firstAttribute="leading" secondItem="msZ-wy-DP2" secondAttribute="leading" id="pSX-Yf-kul"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4i8-jK-Fg3" appends="YES" id="pNk-Ta-yEN"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="2mN-oD-hGB" id="qYV-NJ-e1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4m-Yb-7uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4i8-jK-Fg3">
+                    <connections>
+                        <action selector="tapView:" destination="XhQ-ZW-xDS" id="vre-hY-0Yd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2266.666666666667" y="83.705357142857139"/>
         </scene>

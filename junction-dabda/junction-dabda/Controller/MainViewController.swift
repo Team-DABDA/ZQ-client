@@ -24,6 +24,12 @@ class MainViewController: UIViewController {
         configureNavigationBar()
         loadQuizData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadQuizData()
+        tableView.reloadData()
+    }
 
     @IBAction func pressedCreateButton() {
         guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateViewController") as? CreateViewController else { return }

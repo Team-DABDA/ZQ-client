@@ -9,6 +9,9 @@ import UIKit
 
 class CreateViewController: UIViewController {
 
+    @IBOutlet weak var titleTextfield: UITextField!
+    @IBOutlet weak var scoreTextfield: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
@@ -21,6 +24,8 @@ class CreateViewController: UIViewController {
     
     @IBAction func pressedNextButton() {
         guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateAnswerViewController") as? CreateAnswerViewController else { return }
+        nextViewController.quizModel.title = titleTextfield.text ?? ""
+        nextViewController.quizModel.quizScore = Int(scoreTextfield.text ?? "0") ?? 0
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 

@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol TrueFalseDelegate {
+    func textFieldValueChanged(cell: UITableViewCell, textField: UITextField)
+    func segmentedValueChanged(cell: UITableViewCell, segmented: UISegmentedControl)
+}
+
 class TrueFalseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerSegmentedControl: UISegmentedControl!
+    
+    var delegate: TrueFalseDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +29,15 @@ class TrueFalseTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func segmentedControlValueChanged() {
+        delegate?.segmentedValueChanged(cell: self, segmented: answerSegmentedControl)
+    }
 
+}
+
+extension TrueFalseTableViewCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldValueChanged(cell: self, textField: questionTextField)
+    }
 }
