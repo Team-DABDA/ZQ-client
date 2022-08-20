@@ -15,8 +15,13 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "앱 이름"
+        navigationItem.backButtonTitle = ""
     }
 
+    @IBAction func pressedCreateButton() {
+        guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateViewController") as? CreateViewController else { return }
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
 
 }
 
