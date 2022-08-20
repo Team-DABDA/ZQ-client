@@ -12,12 +12,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordCheckTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        signUpButton.layer.cornerRadius = 15
     }
     
     @IBAction func pressedSignUpButton() {

@@ -123,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Hf2-h7-c4d"/>
                     <connections>
+                        <outlet property="createButton" destination="qbL-yy-M8j" id="svS-lX-Qsa"/>
                         <outlet property="tableView" destination="Rcv-Gs-zyp" id="kdZ-ov-TpT"/>
                     </connections>
                 </viewController>
@@ -205,6 +206,7 @@
                     <navigationItem key="navigationItem" id="YN4-qh-ul9"/>
                     <connections>
                         <outlet property="idTextField" destination="V47-iD-7rw" id="jNt-i5-5XD"/>
+                        <outlet property="loginButton" destination="Q21-Ug-E3s" id="TgQ-ig-X8m"/>
                         <outlet property="passwordTextField" destination="Pbx-pK-jkc" id="seL-sl-zNf"/>
                     </connections>
                 </viewController>
@@ -305,6 +307,7 @@
                         <outlet property="idTextField" destination="T30-Wi-VZ4" id="lhl-Dh-Y8r"/>
                         <outlet property="passwordCheckTextField" destination="cam-uZ-6NB" id="m6c-sl-uTn"/>
                         <outlet property="passwordTextField" destination="B41-vh-5Tw" id="w2n-rz-NwL"/>
+                        <outlet property="signUpButton" destination="eVq-8C-KAM" id="1Ts-Gg-ZrB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pq6-y6-A8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -367,6 +370,11 @@
                                 <buttonConfiguration key="configuration" style="plain" title="다음">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pressedNextButton" destination="HN1-Vc-Tjy" eventType="touchUpInside" id="VgD-Me-rJc"/>
                                 </connections>
@@ -411,6 +419,11 @@
                                 <buttonConfiguration key="configuration" style="plain" title="완료">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="pressedCompleteButton" destination="XhQ-ZW-xDS" eventType="touchUpInside" id="1ou-13-DBc"/>
                                 </connections>
@@ -420,7 +433,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-p8-DVQ">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="60"/>
-                                        <color key="backgroundColor" name="mint"/>
+                                        <color key="backgroundColor" name="purple"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="79h-1T-77y"/>
                                         </constraints>
@@ -429,13 +442,18 @@
                                         <buttonConfiguration key="configuration" style="plain" title="T/F 퀴즈 만들기">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pressedTrueFalseButton" destination="XhQ-ZW-xDS" eventType="touchUpInside" id="7iT-R6-JLi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-aN-ChC">
                                         <rect key="frame" x="199" y="0.0" width="183" height="60"/>
-                                        <color key="backgroundColor" name="mint"/>
+                                        <color key="backgroundColor" name="purple"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="WWO-lO-V9C"/>
                                         </constraints>
@@ -444,6 +462,11 @@
                                         <buttonConfiguration key="configuration" style="plain" title="주관식 퀴즈 만들기">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pressedEssayButton" destination="XhQ-ZW-xDS" eventType="touchUpInside" id="Aot-K9-Xzg"/>
                                         </connections>
@@ -671,6 +694,9 @@
         </namedColor>
         <namedColor name="mint">
             <color red="0.43529411764705883" green="0.82352941176470584" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="purple">
+            <color red="0.54117647058823526" green="0.58431372549019611" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

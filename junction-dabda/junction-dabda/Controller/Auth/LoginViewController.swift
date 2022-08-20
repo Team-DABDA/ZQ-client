@@ -12,13 +12,15 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backButtonTitle = ""
+        loginButton.layer.cornerRadius = 15
     }
     
-    @IBAction func pressedLoginButton() {        
+    @IBAction func pressedLoginButton() {
         guard let userId = idTextField.text, let password = passwordTextField.text else {
             return
         }

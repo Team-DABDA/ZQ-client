@@ -12,6 +12,7 @@ private let cellIdentifier = "MainCell"
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var createButton: UIButton!
     
     var quizList: [QuizModel] = [] {
         didSet {
@@ -23,6 +24,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         loadQuizData()
+        createButton.layer.cornerRadius = 15
     }
     
     override func viewWillAppear(_ animated: Bool) {
