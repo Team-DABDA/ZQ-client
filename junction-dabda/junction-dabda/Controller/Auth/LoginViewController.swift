@@ -14,28 +14,19 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.backButtonTitle = ""
     }
     
     @IBAction func pressedLoginButton() {
         print("DEBUG - Log in")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNavigationController = storyboard.instantiateViewController(identifier: "MainNavigationController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainNavigationController)
     }
     
     @IBAction func pressedSignUpButton() {
         guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
         navigationController?.pushViewController(nextViewController, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

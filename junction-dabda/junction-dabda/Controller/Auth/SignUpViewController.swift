@@ -22,6 +22,9 @@ class SignUpViewController: UIViewController {
     
     @IBAction func pressedSignUpButton() {
         print("DEBUG - Sign up")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNavigationController = storyboard.instantiateViewController(identifier: "MainNavigationController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainNavigationController)
     }
     
 

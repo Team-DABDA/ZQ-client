@@ -586,7 +586,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ogt-A8-fmo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AG9-e8-nJo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="AG9-e8-nJo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="66B-pt-4fx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -608,11 +608,15 @@
         <!--Navigation Controller-->
         <scene sceneID="hLp-s9-cv9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oYn-Bi-KPP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="oYn-Bi-KPP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RNh-z4-aUk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="dark"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="dark"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
