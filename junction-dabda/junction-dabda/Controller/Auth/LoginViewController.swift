@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
     
@@ -17,11 +18,25 @@ class LoginViewController: UIViewController {
         navigationItem.backButtonTitle = ""
     }
     
-    @IBAction func pressedLoginButton() {
-        print("DEBUG - Log in")
+    @IBAction func pressedLoginButton() {        
+        guard let userId = idTextField.text, let password = passwordTextField.text else {
+            return
+        }
+        let login = LoginModel(nickname: userId, password: password)
+        
+        AuthService.shared.login(userInfo: login) { response in
+            guard let response = response.value else { return }
+            guard let data = response else { return }
+            guard let responseData = try? JSONDecoder().decode(LoginUserInfoModel.self, from: data) else { return }
+            UserData.shared.nickname = responseData.nickname
+            UserData.shared.token = responseData.token.access
+            
+        }
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainNavigationController = storyboard.instantiateViewController(identifier: "MainNavigationController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainNavigationController)
+
     }
     
     @IBAction func pressedSignUpButton() {

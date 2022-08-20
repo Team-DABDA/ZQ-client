@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89BFCFC128B160EB00D3CA6F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 89BFCFC028B160EB00D3CA6F /* Alamofire */; };
+		89BFCFC328B161ED00D3CA6F /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFC228B161ED00D3CA6F /* APIConstants.swift */; };
+		89BFCFC528B1623E00D3CA6F /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFC428B1623E00D3CA6F /* QuizModel.swift */; };
+		89BFCFC828B1635800D3CA6F /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFC728B1635800D3CA6F /* QuizService.swift */; };
+		89BFCFCA28B1659E00D3CA6F /* MyRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFC928B1659E00D3CA6F /* MyRequestInterceptor.swift */; };
+		89BFCFCC28B16A1F00D3CA6F /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */; };
+		89BFCFCE28B16D2000D3CA6F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFCFCD28B16D2000D3CA6F /* AuthService.swift */; };
 		89C04E1A28B0437300612DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1928B0437300612DF0 /* AppDelegate.swift */; };
 		89C04E1C28B0437300612DF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1B28B0437300612DF0 /* SceneDelegate.swift */; };
 		89C04E1E28B0437300612DF0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C04E1D28B0437300612DF0 /* MainViewController.swift */; };
@@ -24,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89BFCFC228B161ED00D3CA6F /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		89BFCFC428B1623E00D3CA6F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		89BFCFC728B1635800D3CA6F /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
+		89BFCFC928B1659E00D3CA6F /* MyRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestInterceptor.swift; sourceTree = "<group>"; };
+		89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		89BFCFCD28B16D2000D3CA6F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		89C04E1628B0437300612DF0 /* junction-dabda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "junction-dabda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C04E1928B0437300612DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89C04E1B28B0437300612DF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +60,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BFCFC128B160EB00D3CA6F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89BFCFC628B1634600D3CA6F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				89C04E2E28B045B600612DF0 /* Model */,
+				89BFCFC928B1659E00D3CA6F /* MyRequestInterceptor.swift */,
+				89BFCFC728B1635800D3CA6F /* QuizService.swift */,
+				89BFCFCD28B16D2000D3CA6F /* AuthService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		89C04E0D28B0437300612DF0 = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +97,8 @@
 		89C04E1828B0437300612DF0 /* junction-dabda */ = {
 			isa = PBXGroup;
 			children = (
+				89BFCFC628B1634600D3CA6F /* Networking */,
 				89C04E2F28B0483D00612DF0 /* View */,
-				89C04E2E28B045B600612DF0 /* Model */,
 				89C04E2D28B045AF00612DF0 /* Controller */,
 				89C04E1928B0437300612DF0 /* AppDelegate.swift */,
 				89C04E1B28B0437300612DF0 /* SceneDelegate.swift */,
@@ -100,6 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				89C04E3228B048DC00612DF0 /* ProfileImageList.swift */,
+				89BFCFC228B161ED00D3CA6F /* APIConstants.swift */,
+				89BFCFC428B1623E00D3CA6F /* QuizModel.swift */,
+				89BFCFCB28B16A1F00D3CA6F /* UserInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +167,9 @@
 			dependencies = (
 			);
 			name = "junction-dabda";
+			packageProductDependencies = (
+				89BFCFC028B160EB00D3CA6F /* Alamofire */,
+			);
 			productName = "junction-dabda";
 			productReference = 89C04E1628B0437300612DF0 /* junction-dabda.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 89C04E0D28B0437300612DF0;
+			packageReferences = (
+				89BFCFBF28B160EB00D3CA6F /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 89C04E1728B0437300612DF0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,10 +233,16 @@
 				89C04E3B28B0AAB700612DF0 /* EssayTableViewCell.swift in Sources */,
 				89C04E1A28B0437300612DF0 /* AppDelegate.swift in Sources */,
 				89C04E3528B04E0C00612DF0 /* CreateViewController.swift in Sources */,
+				89BFCFCA28B1659E00D3CA6F /* MyRequestInterceptor.swift in Sources */,
 				89C04E3728B053F200612DF0 /* CreateAnswerViewController.swift in Sources */,
 				89C04E3328B048DC00612DF0 /* ProfileImageList.swift in Sources */,
+				89BFCFC528B1623E00D3CA6F /* QuizModel.swift in Sources */,
+				89BFCFC828B1635800D3CA6F /* QuizService.swift in Sources */,
+				89BFCFCC28B16A1F00D3CA6F /* UserInfoModel.swift in Sources */,
 				89C04E3928B0AA7C00612DF0 /* TrueFalseTableViewCell.swift in Sources */,
 				89C04E3128B0484C00612DF0 /* MainTableViewCell.swift in Sources */,
+				89BFCFC328B161ED00D3CA6F /* APIConstants.swift in Sources */,
+				89BFCFCE28B16D2000D3CA6F /* AuthService.swift in Sources */,
 				89C04E3E28B0C89900612DF0 /* LoginViewController.swift in Sources */,
 				89C04E1C28B0437300612DF0 /* SceneDelegate.swift in Sources */,
 			);
@@ -422,6 +462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89BFCFBF28B160EB00D3CA6F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89BFCFC028B160EB00D3CA6F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89BFCFBF28B160EB00D3CA6F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89C04E0E28B0437300612DF0 /* Project object */;
 }

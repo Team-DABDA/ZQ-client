@@ -67,13 +67,13 @@ App.onJoinPlayer.Add(function (player) {
       _isGameOpened = false;
     } else if (msg.type == "start") {
       startGame(STATE_INIT);
-      for (var p in _players) {
-        if (p.tag.widget != null) {
-          p.tag.widget.destroy();
-          p.tag.widget = null;
-          // ßp.sendUpdated();
-        }
-      }
+      //   for (var p in _players) {
+      //     if (p.tag.widget != null) {
+      //       p.tag.widget.destroy();
+      //       p.tag.widget = null;
+      //       // ßp.sendUpdated();
+      //     }
+      //   }
     }
     player.sendUpdated();
   });

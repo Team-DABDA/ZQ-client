@@ -14,13 +14,27 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "앱 이름"
-        navigationItem.backButtonTitle = ""
+        configureNavigationBar()
     }
 
     @IBAction func pressedCreateButton() {
         guard let nextViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateViewController") as? CreateViewController else { return }
         self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    func configureNavigationBar() {
+        let logoImageView = UIImageView(image: UIImage(named: "simpleLogo") ?? UIImage())
+        logoImageView.contentMode = .scaleAspectFit
+
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            logoImageView.widthAnchor.constraint(equalToConstant: 60),
+            logoImageView.heightAnchor.constraint(equalToConstant: 60)
+        ])
+                
+        self.navigationItem.titleView = logoImageView
+        
+        navigationItem.backButtonTitle = ""
     }
 
 }
