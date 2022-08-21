@@ -35,6 +35,6 @@ class EssayTableViewCell: UITableViewCell {
 extension EssayTableViewCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.questionTextFieldValueChanged(cell: self, textField: questionTextField)
-        delegate?.answerTextFieldValueChanged(cell: self, textField: questionTextField)
+        delegate?.answerTextFieldValueChanged(cell: self, textField: answerTextField)
     }
 }

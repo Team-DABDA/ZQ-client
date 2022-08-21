@@ -101,7 +101,7 @@
             <div class="content">
                 <img src="https://homedoc-content.s3.ap-northeast-2.amazonaws.com/media/zq/zq_logo.png" class="logo__img"/>
                 <span>문제 ID를 입력하고 게임 시작 버튼을 눌러주세요.</span>
-                <input class="input"/>
+                <input type="text" class="input"/>
             </div>
             <div class="footer">
                 <button onclick="pressedStartButton()">게임 시작!</button>
@@ -124,6 +124,7 @@
             window.parent.postMessage(
                 {
                     type: "start",
+                    id: document.querySelector('input').value,
                 },
                 "*"
             );
