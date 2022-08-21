@@ -46,7 +46,7 @@ let _currentQuestion = "";
 let _currentAnswer = "";
 let _result = "";
 let _players = App.players;
-let _currentQuestionNumber = -1;
+let _currentQuestionNumber = 0;
 
 let _questionId = "";
 let QUESTION = [];
@@ -77,7 +77,6 @@ App.onStart.Add(function () {
       // 앱 종료 시키기 함수
     } else if (msg.type == "start") {
       _questionId = msg.id;
-      App.showCenterLabel(`${_questionId}`);
       loadQuestionData();
       // startGame(STATE_INIT);
       widget.destroy();
@@ -134,16 +133,15 @@ App.onJoinPlayer.Add(function (player) {
 App.onUpdate.Add(function (dt) {
   if (_currentQuestionNumber == QUESTION.length) {
     _state = STATE_END;
-    return;
+  } else {
+    // const type = QUESTION[_currentQuestionNumber].type;
+    _currentQuestion = QUESTION[_currentQuestionNumber].content;
+    _currentAnswer = QUESTION[_currentQuestionNumber].answer;
   }
   if (!_start) {
     return;
   }
   _stateTimer += dt;
-
-  // const type = QUESTION[_currentQuestionNumber].type;
-  _currentQuestion = QUESTION[_currentQuestionNumber].content;
-  _currentAnswer = QUESTION[_currentQuestionNumber].answer;
 
   switch (_state) {
     case STATE_INIT:
@@ -198,15 +196,18 @@ App.onUpdate.Add(function (dt) {
         App.showCenterLabel(`아무도 정답을 맞히지 못했습니다. 이런!`);
       }
       _isKeyPressed = false;
-      _state = STATE_READY;
       _currentQuestionNumber += 1;
+      if (_currentQuestionNumber == QUESTION.length) {
+        _state = STATE_END;
+      }
       App.sayToAll(`${_currentQuestionNumber}입니다`);
-
       break;
     case STATE_END:
+      App.sayToAll(`끝으로~~!!`);
       winner = findFinalWinner();
       App.showCenterLabel(`🎉최종 우승자는 ${winner.join(" ")} 님입니다!🎉`);
       _start = false;
+      initGame();
       break;
   }
 });
@@ -224,12 +225,16 @@ function findFinalWinner() {
   return winner;
 }
 
-function playGame(question) {
-  const type = question.type;
-  const content = question.content;
-  const answer = question.answer;
-
-  App.showCenterLabel(`Q. ${content}`);
+function initGame() {
+  _start = false;
+  _isGameOpened = false;
+  _state = STATE_INIT;
+  _timer = 20;
+  _isKeyPressed = false;
+  _currentSpeaker = null;
+  _currentQuestion = null;
+  _currentAnswer = null;
+  _currentQuestionNumber = 0;
 }
 
 // 이벤트 콜백 처리 후 다시 onUpdate
