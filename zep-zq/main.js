@@ -199,6 +199,8 @@ App.onUpdate.Add(function (dt) {
       _currentQuestionNumber += 1;
       if (_currentQuestionNumber == QUESTION.length) {
         _state = STATE_END;
+      } else {
+        _state = STATE_READY;
       }
       App.sayToAll(`${_currentQuestionNumber}입니다`);
       break;
